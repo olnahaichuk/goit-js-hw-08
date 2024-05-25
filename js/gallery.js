@@ -96,6 +96,7 @@ const instance = basicLightbox.create(`
 `);
 
 instance.show();
+instance.close();
 
 const modalEl = document.querySelector(".modal");
 
