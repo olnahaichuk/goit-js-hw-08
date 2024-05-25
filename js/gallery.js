@@ -95,12 +95,12 @@ gallery.addEventListener('click', (e) => {
     if (e.target === e.currentTarget) return;
     const showImg = e.target.dataset.source;
     
-    const instance= basicLightbox.create(`<img src="${showImg}" alt="${e.target.alt}">`);
+    const instance = basicLightbox.create(`<img src="${showImg}" alt="${e.target.alt}">`);
     
     instance.show();
     
 });
-instance.addEventListener('click', (e) => {
+gallery.addEventListener('click', (e) => {
     if (e.target === currentTarget) {
         instance.close();
     };
