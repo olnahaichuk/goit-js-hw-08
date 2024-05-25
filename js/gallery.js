@@ -88,30 +88,33 @@ const gallery = document.querySelector(".gallery");
 gallery.innerHTML = markup;
 
 const bodyEl = document.querySelector("body");
+console.log(bodyEl);
+bodyEl.insertAdjacentHTML("afterbegin","<div><div></div></div>");
+console.log(bodyEl);
+bodyEl.firstChild.classList.add('backdrop');
+bodyEl.firstChild.firstChild.classList.add('modal');
+const backdropEl = document.querySelector(".backdrop");
+const modalEl = backdropEl.querySelector('.modal');
 
-const instance = basicLightbox.create(`
-    <div class="modal">
-        
-    </div>
-`);
 
-instance.show();
-instance.close();
-
-const modalEl = document.querySelector(".modal");
+function showModal() {
+    bodyEl.classList.add('show-modal');
+}
+function closeModal() {
+    bodyEl.classList.remove('show-modal');
+}
 
 gallery.addEventListener('click', (e) => {
     e.preventDefault();
     if (e.target === e.currentTarget) return;
     const showImg = e.target.dataset.source;
     modalEl.style.backgroundImage = `url(${showImg})`;
-    modalEl.style.backgroundSize = ("cover");
-    instance.show();
+    modalEl.style.backgroundSize = "cover";
+    showModal();
 });
-
-gallery.addEventListener('click', (e) => {
+backdropEl.addEventListener('click', (e) => {
     if (e.target === e.currentTarget) {
-        instance.close();
+        closeModal();
     }
 })
 

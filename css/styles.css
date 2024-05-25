@@ -12,11 +12,32 @@ img {
     width: 360px;
     height: 200px;
 }
+body.show-modal .backdrop{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+}
+.backdrop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(46, 47, 66, 0.8);
 
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+   
+
+}
 .modal{
     padding: 28px 164px;
     width: 1112px;
-    height: 640px;
-    cursor: pointer;
+        height: 640px;
+        cursor: pointer;
      
 }
