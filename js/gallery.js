@@ -101,7 +101,7 @@ gallery.addEventListener('click', (e) => {
     
 });
 gallery.addEventListener('click', (e) => {
-    if (e.target === currentTarget) {
+    if (e.target === e.currentTarget) {
         instance.close();
     };
 } 
